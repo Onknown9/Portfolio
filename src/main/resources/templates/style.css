@@ -1,0 +1,98 @@
+*{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(rgba(110,110,110),rgba(110,110,110));
+}
+.upper{
+    height: 6vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12,0,21),rgba(60,70,80));
+    display:block:
+}
+.avatar{
+    margin-top:11px;
+    margin-left:30px;
+}
+.github{
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    color:rgb(185,185,185);
+    text-decoration: none;
+    text-align:center;
+    position: absolute;
+    margin-top:17px;
+    margin-left:20px;
+}
+.down{
+    height: 6vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(rgba(60,70,80),rgba(12,0,21));
+}
+.middle{
+    width:100%;
+    height:88vh;
+    background-image: linear-gradient(rgba(60,70,80),rgba(60,70,80));
+    display:block;
+}
+.container {
+  display: inline-block;
+  cursor: pointer;
+  background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+  float:right;
+  margin-right:30px;
+  margin-top:7px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+.imageContainer{
+    position:absolute;
+    border: 2px solid indigo;
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    width:600px;
+    height:400px;
+    margin-left:63vh;
+    margin-top:11vh;
+    border-radius: 1em;
+}
+.descContainer{
+    position:absolute;
+    border: 2px solid indigo ;
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    width:1000px;
+    height:200px;
+    margin-left:43vh;
+    margin-top:60vh;
+    border-radius: 1em;
+    color:rgb(185,185,185);
+}
+.text{
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    padding:10px;
+}
+.navigation{
+    height:100%;
+    width:12%;
+    float:right;
+    background-image: linear-gradient(rgba(20,20,20),rgba(20,20,20));
+    transition: 0.4s;
+}
