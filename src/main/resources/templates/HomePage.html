@@ -16,9 +16,16 @@
             <div class="bar3"></div>
         </div>
         <script>
+        var navigationOpen=false;
             function myFunction(x) {
             x.classList.toggle("change");
-            x.navigation.toggle("change");
+            var navigation = document.querySelector(".navigation");
+            if(navigationOpen){
+                navigation.style.width="0";
+            }else{
+                navigation.style.width="12%";
+            }
+            navigationOpen = !navigationOpen;
             }
         </script>
     </div>
