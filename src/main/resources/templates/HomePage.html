@@ -32,17 +32,17 @@
 
 
     <div class="middle">
-        <button class="backward">
+        <button class="backward" onclick="changePhoto(-1)">
             <
         </button>
-        <button class="forward">
+        <button class="forward" onclick="changePhoto(1)">
             >
         </button>
         <div class="imageContainer">
-            <img class="photo" alt="photo" src="/images/48158650.jpg" >
+            <img class="photo" alt="photo" th:src="@{/resources/images/project1/pr{{currentPhotoIndex}}.png}">
         </div>
         <div class="descContainer">
-            <p class="text">All desc is located here</p>
+            <p class="text" th:text="${currentDescription}">All desc is located here</p>
         </div>
 
         <div class="navigation">
