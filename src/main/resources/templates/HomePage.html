@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
     <div class="upper">
-        <img class="avatar" alt="photo" src="/images/48158650.jpg" style="width:30px;height=30px;" >
+        <img class="avatar" alt="photo" th:src="@{/images/48158650.jpg}" style="width:30px; height:30px;">
+
         <a class="github" href="https://github.com/Onknown9">GitHub</a>
 
         <div class="container" onclick="myFunction(this)">
@@ -15,41 +16,32 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-        <script>
-        var navigationOpen=true;
-            function myFunction(x) {
-            x.classList.toggle("change");
-            var navigation = document.querySelector(".navigation");
-            if(navigationOpen){
-                navigation.style.width="0";
-            }else{
-                navigation.style.width="12%";
-            }
-            navigationOpen = !navigationOpen;
-            }
-        </script>
     </div>
 
-
     <div class="middle">
-        <button class="backward" onclick="changePhoto(-1)">
-            <
-        </button>
-        <button class="forward" onclick="changePhoto(1)">
-            >
-        </button>
+        <form th:action="@{/changePhoto}" method="post">
+            <input type="hidden" name="direction" value="-1" />
+            <input type="hidden" name="currentPhotoIndex" th:value="${currentPhotoIndex}" />
+            <button type="submit" class="backward"> &lt; </button>
+        </form>
+
+        <form th:action="@{/changePhoto}" method="post">
+            <input type="hidden" name="direction" value="1" />
+            <input type="hidden" name="currentPhotoIndex" th:value="${currentPhotoIndex}" />
+            <button type="submit" class="forward"> &gt; </button>
+        </form>
+
         <div class="imageContainer">
-            <img class="photo" alt="photo" th:src="@{/resources/images/project1/pr{{currentPhotoIndex}}.png}">
+            <img class="photo" alt="photo" th:attr="src=@{${imagePath}}" />
         </div>
+
         <div class="descContainer">
             <p class="text" th:text="${currentDescription}">All desc is located here</p>
         </div>
 
-        <div class="navigation">
-
+        <div class="navigation" style="width:0%">
         </div>
     </div>
-
 
     <div class="down"></div>
 </body>
