@@ -6,16 +6,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MainController {
     @GetMapping("/")
-    public String homePage(@RequestParam(name = "currentPhotoIndex", defaultValue = "1") int currentPhotoIndex,
-                           @RequestParam(name = "direction", defaultValue = "0") int direction,
-                            Model model) {
+    public String homePage(@RequestParam(name = "projectName", defaultValue = "pr1") String projectName,
+                           @RequestParam(name = "currentPhotoIndex", defaultValue = "1") int currentPhotoIndex,
+                           Model model) {
+
         int maxPhotos = 2; // Set your maxPhotos value
 
-        currentPhotoIndex += direction;
         if (currentPhotoIndex < 1) {
             currentPhotoIndex = maxPhotos;
         } else if (currentPhotoIndex > maxPhotos) {
@@ -27,16 +31,18 @@ public class MainController {
         String currentDescription = photoDescriptions[currentPhotoIndex - 1];
 
         // Construct the image path
-        String imagePath = String.format("/images/project1/pr%d.png", currentPhotoIndex);
+        String imagePath = String.format("/images/%s/pr%d.png", projectName, currentPhotoIndex);
 
-
-        model.addAttribute("imagePath", imagePath);
+        model.addAttribute("currentProject", projectName);
         model.addAttribute("currentPhotoIndex", currentPhotoIndex);
         model.addAttribute("maxPhotos", maxPhotos);
         model.addAttribute("currentDescription", currentDescription);
+        model.addAttribute("imagePath", imagePath);
 
         return "HomePage"; // Return the name of your Thymeleaf template
     }
+
+
     @PostMapping("/changePhoto")
     public String changePhoto(
             @RequestParam(name = "currentPhotoIndex") int currentPhotoIndex,
