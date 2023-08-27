@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Page</title>
+    <title>Project 1</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
@@ -11,12 +11,8 @@
         <img class="avatar" alt="photo" th:src="@{/images/48158650.jpg}" style="width:30px; height:30px;">
         <a class="github" href="https://github.com/Onknown9">GitHub</a>
 
-        <button class="pr1Button">
-            Project 1
-        </button>
-        <button class="pr2Button">
-            Project 2
-        </button>
+        <a class="pr1Button">Project 1</a>
+        <a href="/project2" class="pr2Button">Project 2</a>
     </div>
     <div class="middle">
         <form th:action="@{/changePhoto}" method="post">

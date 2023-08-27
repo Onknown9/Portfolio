@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project 2</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+<div class="upper">
+
+  <img class="avatar" alt="photo" th:src="@{/images/48158650.jpg}" style="width:30px; height:30px;">
+  <a class="github" href="https://github.com/Onknown9">GitHub</a>
+
+  <a  href="/" class="pr1Button">Project 1</a>
+  <a  class="pr2Button">Project 2</a>
+</div>
+<div class="middle">
+  <form th:action="@{/changePhoto2}" method="post">
+    <input type="hidden" name="direction" value="-1" />
+    <input type="hidden" name="currentPhotoIndex" th:value="${currentPhotoIndex}" />
+    <button type="submit" class="backward"> &lt; </button>
+  </form>
+
+  <form th:action="@{/changePhoto2}" method="post">
+    <input type="hidden" name="direction" value="1" />
+    <input type="hidden" name="currentPhotoIndex" th:value="${currentPhotoIndex}" />
+    <button type="submit" class="forward"> &gt; </button>
+  </form>
+
+  <div class="imageContainer">
+    <img class="photo" alt="photo" th:attr="src=@{${imagePath}}" />
+  </div>
+
+  <div class="descContainer">
+    <p class="text" th:text="${currentDescription}">All desc is located here</p>
+  </div>
+</div>
+
+<div class="down"></div>
+</body>
+</html>
