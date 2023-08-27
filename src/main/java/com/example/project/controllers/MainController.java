@@ -13,12 +13,14 @@ import java.util.Map;
 
 @Controller
 public class MainController {
+    int maxPhotos = 2; // Set your maxPhotos value
+    // Construct the image path
+    String imagePath = String.format("/images/project1/pr%d.png", 1);
     @GetMapping("/")
     public String homePage(@RequestParam(name = "projectName", defaultValue = "pr1") String projectName,
                            @RequestParam(name = "currentPhotoIndex", defaultValue = "1") int currentPhotoIndex,
                            Model model) {
 
-        int maxPhotos = 2; // Set your maxPhotos value
 
         if (currentPhotoIndex < 1) {
             currentPhotoIndex = maxPhotos;
@@ -30,14 +32,10 @@ public class MainController {
         String[] photoDescriptions = PhotoDescription.getPr1();
         String currentDescription = photoDescriptions[currentPhotoIndex - 1];
 
-        // Construct the image path
-        String imagePath = String.format("/images/%s/pr%d.png", projectName, currentPhotoIndex);
 
-        model.addAttribute("currentProject", projectName);
         model.addAttribute("currentPhotoIndex", currentPhotoIndex);
         model.addAttribute("maxPhotos", maxPhotos);
         model.addAttribute("currentDescription", currentDescription);
-        model.addAttribute("imagePath", imagePath);
 
         return "HomePage"; // Return the name of your Thymeleaf template
     }
@@ -49,8 +47,6 @@ public class MainController {
             @RequestParam(name = "direction") int direction,
             Model model) {
 
-        // Calculate new photo index
-        int maxPhotos = PhotoDescription.getPr1().length;
         currentPhotoIndex += direction;
         if (currentPhotoIndex < 1) {
             currentPhotoIndex = maxPhotos;
@@ -62,8 +58,6 @@ public class MainController {
         String[] photoDescriptions = PhotoDescription.getPr1();
         String currentDescription = photoDescriptions[currentPhotoIndex - 1];
 
-        // Construct the image path
-        String imagePath = String.format("/images/project1/pr%d.png", currentPhotoIndex);
 
         model.addAttribute("currentPhotoIndex", currentPhotoIndex);
         model.addAttribute("maxPhotos", maxPhotos);
