@@ -1,84 +1,104 @@
-/* Reset default margin and padding, set a background gradient */
-body {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(rgba(110,110,110), rgba(110,110,110));
+*{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(rgba(110,110,110),rgba(110,110,110));
 }
-
-/* Set common height for upper, middle, and down sections */
-.upper, .middle, .down {
-    height: 100vh;
+.upper{
+    height: 6vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12,0,21),rgba(60,70,80));
+    display:block:
 }
-
-/* Header styling */
-.upper {
-    background-image: linear-gradient(rgba(12,0,21), rgba(60,70,80));
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+.avatar{
+    margin-top:11px;
+    margin-left:30px;
+    border-radius: 5em;
 }
-.avatar {
-    margin-left: 10px;
-    border-radius: 50%;
-}
-
-.github {
+.github{
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    color:rgb(185,185,185);
     text-decoration: none;
-    color: rgb(185,185,185);
-}
-
-/* Middle section styling */
-.middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgba(60,70,80), rgba(60,70,80));
-}
-
-.imageContainer, .descContainer {
-    position: relative;
-    border: 2px solid indigo;
-    background-image: linear-gradient(rgba(20,20,80,0), rgba(20,20,20,0));
-    border-radius: 1em;
-    margin: 20px;
-    padding: 20px;
-}
-
-.text {
-    text-align: center;
-    padding: 10px;
-    background-image: linear-gradient(rgba(20,20,80,0), rgba(20,20,20,0));
-}
-
-.photo {
-    border-radius: 1em;
-    width: 600px;
-    height: 400px;
-}
-
-.backward, .forward {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 2px solid indigo;
-    background-image: linear-gradient(rgba(60,70,80), rgba(60,70,80));
-    color: rgb(185,185,185);
-    font-size: 25px;
-    text-align: center;
+    text-align:center;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+    margin-top:17px;
+    margin-left:20px;
 }
-
-/* Footer styling */
-.down {
+.down{
+    height: 6vh;
+    width: 100%;
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(60,70,80), rgba(12,0,21));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    background-image: linear-gradient(rgba(60,70,80),rgba(12,0,21));
+}
+.middle{
+    width:100%;
+    height:88vh;
+    background-image: linear-gradient(rgba(60,70,80),rgba(60,70,80));
+    display:block;
+}
+.container {
+  display: inline-block;
+  cursor: pointer;
+  background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+  float:right;
+  margin-right:30px;
+  margin-top:7px;
+}
+.imageContainer{
+    position:absolute;
+    border: 2px solid indigo;
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    width:600px;
+    height:400px;
+    margin-left:63vh;
+    margin-top:11vh;
+    border-radius: 1em;
+}
+.descContainer{
+    position:absolute;
+    border: 2px solid indigo ;
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    width:1000px;
+    height:200px;
+    margin-left:43vh;
+    margin-top:60vh;
+    border-radius: 1em;
+    color:rgb(185,185,185);
+}
+.text{
+    text-align:center;
+    background-image: linear-gradient(rgba(20,20,80,0),rgba(20,20,20,0));
+    padding:10px;
+}
+.photo{
+    border-radius: 1em;
+    width:600px;
+    height:400px;
+}
+.backward{
+    height:30px;
+    width:30px;
+    border-radius: 5em;
+    border: 2px solid indigo ;
+    background-image: linear-gradient(rgba(60,70,80),rgba(60,70,80));
+    color:rgb(185,185,185);
+    font-size:25px;
+    text-align:center;
+    position:absolute;
+    margin-left:55vh;
+    margin-top:30vh;
+}
+.forward{
+    height:30px;
+    width:30px;
+    border-radius: 5em;
+    border: 2px solid indigo ;
+    background-image: linear-gradient(rgba(60,70,80),rgba(60,70,80));
+    color:rgb(185,185,185);
+    font-size:25px;
+    text-align:center;
+    position:absolute;
+    margin-top:30vh;
+    margin-left:130vh;
 }
